@@ -18,3 +18,118 @@ select, input[type=file] { margin: 6px 0 12px; display: block; }
 .row:last-child { border-bottom: 0; }
 .text { white-space: pre-wrap; word-break: break-word; }
 .muted { color: #666; font-size: 0.9rem; }
+
+main:has(.architecture-page) { max-width: 1040px; }
+.architecture-page { display: grid; gap: 18px; }
+.architecture-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 28px;
+}
+.architecture-hero h1 {
+  max-width: 17ch;
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+.architecture-eyebrow {
+  margin: 0 0 10px;
+  color: #2457d6;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.architecture-lede { max-width: 62ch; margin: 0; color: #555; }
+.architecture-repo-link {
+  flex: 0 0 auto;
+  padding: 10px 14px;
+  border: 1px solid #d9e1f5;
+  border-radius: 8px;
+  background: #f7f9ff;
+  font-weight: 600;
+}
+.architecture-section { padding: 24px; }
+.architecture-section-heading { margin-bottom: 20px; }
+.architecture-section-heading h2 { margin-bottom: 8px; font-size: 1.35rem; }
+.architecture-section-heading > p:last-child { margin-bottom: 0; }
+.architecture-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: architecture-step;
+}
+.architecture-step {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #e6e9ef;
+  border-radius: 9px;
+  background: #fbfcfe;
+}
+.architecture-step-number {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: #eaf0ff;
+  color: #2457d6;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.architecture-step h3 { margin: 0 0 7px; font-size: 1rem; }
+.architecture-step p,
+.architecture-detail p { margin: 0; color: #555; font-size: 0.92rem; }
+.architecture-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.architecture-detail {
+  padding: 16px;
+  border: 1px solid #e6e9ef;
+  border-radius: 9px;
+  background: #fbfcfe;
+}
+.architecture-detail-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #242a35;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.architecture-timing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.architecture-status-note {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border-left: 3px solid #2457d6;
+  background: #f5f7fc;
+  color: #4c5565;
+  font-size: 0.9rem;
+}
+.architecture-next-copy { max-width: 78ch; margin: 0; color: #555; }
+
+@media (max-width: 720px) {
+  main:has(.architecture-page) { padding: 18px; }
+  .architecture-hero { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .architecture-flow,
+  .architecture-detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+  main:has(.architecture-page) { padding: 14px; }
+  .architecture-hero,
+  .architecture-section { padding: 18px; }
+  .architecture-flow,
+  .architecture-detail-grid,
+  .architecture-timing-grid { grid-template-columns: 1fr; }
+  .architecture-repo-link { width: 100%; text-align: center; }
+}
